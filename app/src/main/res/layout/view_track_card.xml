@@ -18,7 +18,7 @@
         android:animateLayoutChanges="true"
         tools:targetApi="honeycomb">
 
-        <ly.aswin.mymusic.ui.views.ReboundImageView
+        <ly.aswin.mymusic.ui.customviews.ReboundImageView
             android:id="@+id/track_card_thumbnail"
             android:layout_width="match_parent"
             android:layout_height="@dimen/thumbnail_height"

@@ -7,4 +7,6 @@
     <dimen name="thumbnail_height">160dp</dimen>
     <dimen name="card_elevation">10dp</dimen>
     <dimen name="card_corners">4dp</dimen>
+    <dimen name="small_spacing">4dp</dimen>
+    <dimen name="circle_size">40dp</dimen>
 </resources>

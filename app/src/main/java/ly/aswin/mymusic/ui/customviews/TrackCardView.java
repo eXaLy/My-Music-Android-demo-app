@@ -1,4 +1,4 @@
-package ly.aswin.mymusic.ui.views;
+package ly.aswin.mymusic.ui.customviews;
 
 import android.content.Context;
 import android.support.v7.widget.CardView;

@@ -1,4 +1,4 @@
-package ly.aswin.mymusic.ui.views;
+package ly.aswin.mymusic.ui.customviews;
 
 import android.annotation.TargetApi;
 import android.content.Context;

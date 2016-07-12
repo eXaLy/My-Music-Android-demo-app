@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import ly.aswin.mymusic.R;
 import ly.aswin.mymusic.data.models.Track;
 import ly.aswin.mymusic.databinding.ActivityTrackBinding;
+import ly.aswin.mymusic.ui.viewmodels.InfoCircleViewModel;
 
 public class TrackActivity extends AppCompatActivity {
 
@@ -37,6 +38,13 @@ public class TrackActivity extends AppCompatActivity {
         ActivityTrackBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_track);
         Track track = getIntent().getParcelableExtra(KEY_TRACK);
         binding.setTrack(track);
+
+        InfoCircleViewModel playsCountViewModel = new InfoCircleViewModel(getString(R.string.plays_count),
+                String.valueOf(track.getPlayCount()));
+        InfoCircleViewModel downloadsCountViewModel = new InfoCircleViewModel(getString(R.string.downloads_count),
+                String.valueOf(track.getDownloadCount()));
+        binding.trackCirclePlays.setInfoCircleViewModel(playsCountViewModel);
+        binding.trackCircleDownloads.setInfoCircleViewModel(downloadsCountViewModel);
     }
 
     private void initToolbar() {
