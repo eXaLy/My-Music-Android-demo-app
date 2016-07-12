@@ -52,11 +52,9 @@ public class Track extends BaseObservable implements Parcelable {
     @Bindable
     private String waveformUrl;
 
-    @SerializedName("stream_url")
     @Bindable
     private String streamUrl;
 
-    @SerializedName("download_url")
     @Bindable
     private String downloadUrl;
 

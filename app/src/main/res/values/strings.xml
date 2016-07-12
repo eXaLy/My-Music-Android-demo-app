@@ -3,4 +3,5 @@
     <string name="tracks">Tracks</string>
     <string name="plays_count">Plays</string>
     <string name="downloads_count">Downloads</string>
+    <string name="loading">Loading...</string>
 </resources>

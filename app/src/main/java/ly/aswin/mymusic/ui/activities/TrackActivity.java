@@ -1,6 +1,7 @@
 package ly.aswin.mymusic.ui.activities;
 
 import android.databinding.DataBindingUtil;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +13,7 @@ import ly.aswin.mymusic.data.models.Track;
 import ly.aswin.mymusic.databinding.ActivityTrackBinding;
 import ly.aswin.mymusic.ui.viewmodels.InfoCircleViewModel;
 import ly.aswin.mymusic.ui.viewmodels.TrackActivityHandlers;
+import ly.aswin.mymusic.utils.MusicPlayer;
 
 public class TrackActivity extends AppCompatActivity {
 
@@ -47,7 +49,7 @@ public class TrackActivity extends AppCompatActivity {
         binding.trackCirclePlays.setInfoCircleViewModel(playsCountViewModel);
         binding.trackCircleDownloads.setInfoCircleViewModel(downloadsCountViewModel);
 
-        binding.setHandlers(new TrackActivityHandlers());
+        binding.setHandlers(new TrackActivityHandlers(new MusicPlayer(track.getStreamUrl())));
     }
 
     private void initToolbar() {
