@@ -27,18 +27,20 @@ public class TrackActivityHandlers extends BaseObservable {
     }
 
     public void setPlaying(boolean playing) {
-        isPlaying = playing;
-        notifyPropertyChanged(BR.isPlaying);
-    }
-
-    public void onClickPlayPause(View view) {
         if (musicPlayer.isPrepared()) {
-            setPlaying(!isPlaying);
+            isPlaying = playing;
             if (isPlaying) {
                 musicPlayer.play();
             } else {
                 musicPlayer.pause();
             }
+            notifyPropertyChanged(BR.isPlaying);
+        }
+    }
+
+    public void onClickPlayPause(View view) {
+        if (musicPlayer.isPrepared()) {
+            setPlaying(!isPlaying);
         } else {
             Toast.makeText(view.getContext(), R.string.loading, Toast.LENGTH_SHORT).show();
         }

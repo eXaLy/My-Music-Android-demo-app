@@ -15,13 +15,14 @@ import rx.schedulers.Schedulers;
  */
 public class DataManager {
 
-    private static final String KIPZES_USER_ID = "25613013";
+    public static final String KIPZES_USER_ID = "25613013";
+    public static final String SPECDRUMS_USER_ID = "51536542";
 
     public DataManager() {
     }
 
-    public Subscription getMyMusic(Subscriber<List<Track>> subscriber) {
-        return NetworkHandler.getInstance().getSoundCloudService().getTracks(KIPZES_USER_ID)
+    public Subscription getMusic(String userId, Subscriber<List<Track>> subscriber) {
+        return NetworkHandler.getInstance().getSoundCloudService().getTracks(userId)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe(subscriber);

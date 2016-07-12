@@ -1,7 +1,6 @@
 package ly.aswin.mymusic.ui.activities;
 
 import android.databinding.DataBindingUtil;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -19,11 +18,21 @@ public class TrackActivity extends AppCompatActivity {
 
     public static final String KEY_TRACK = "KEY_TRACK";
 
+    private TrackActivityHandlers handlers;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initLayout();
         initToolbar();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (handlers != null) {
+            handlers.setPlaying(false);
+        }
     }
 
     @Override
@@ -35,6 +44,14 @@ public class TrackActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (handlers != null) {
+            handlers.setPlaying(false);
+        }
+        super.onBackPressed();
     }
 
     private void initLayout() {
@@ -49,7 +66,8 @@ public class TrackActivity extends AppCompatActivity {
         binding.trackCirclePlays.setInfoCircleViewModel(playsCountViewModel);
         binding.trackCircleDownloads.setInfoCircleViewModel(downloadsCountViewModel);
 
-        binding.setHandlers(new TrackActivityHandlers(new MusicPlayer(track.getStreamUrl())));
+        this.handlers = new TrackActivityHandlers(new MusicPlayer(track.getStreamUrl()));
+        binding.setHandlers(handlers);
     }
 
     private void initToolbar() {
