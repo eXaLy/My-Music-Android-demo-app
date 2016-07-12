@@ -8,6 +8,9 @@
         <variable
             name="track"
             type="ly.aswin.mymusic.data.models.Track" />
+        <variable
+            name="handlers"
+            type="ly.aswin.mymusic.ui.viewmodels.TrackActivityHandlers" />
     </data>
 
     <android.support.design.widget.CoordinatorLayout
@@ -66,15 +69,30 @@
                     android:id="@+id/track_circle_plays"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:layout_margin="@dimen/large_spacing" />
 
                 <ly.aswin.mymusic.ui.customviews.InfoCircleView
                     android:id="@+id/track_circle_downloads"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:layout_margin="@dimen/large_spacing" />
             </LinearLayout>
 
         </android.support.v4.widget.NestedScrollView>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/medium_spacing"
+            android:src="@{handlers.isPlaying ? @drawable/ic_pause_white_24dp : @drawable/ic_play_arrow_white_24dp }"
+            app:backgroundTint="@color/colorPrimary"
+            app:elevation="@dimen/card_elevation"
+            app:rippleColor="@color/colorAccent"
+            app:layout_anchor="@id/app_bar"
+            app:layout_anchorGravity="bottom|right|end"
+            android:onClick="@{handlers.onClickPlayPause}"/>
     </android.support.design.widget.CoordinatorLayout>
 </layout>

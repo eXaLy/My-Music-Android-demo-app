@@ -11,7 +11,7 @@
             type="ly.aswin.mymusic.data.models.Track" />
     </data>
 
-    <ly.aswin.mymusic.ui.views.TrackCardView
+    <ly.aswin.mymusic.ui.customviews.TrackCardView
         android:id="@+id/track_card_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -8,5 +8,8 @@
     <dimen name="card_elevation">10dp</dimen>
     <dimen name="card_corners">4dp</dimen>
     <dimen name="small_spacing">4dp</dimen>
-    <dimen name="circle_size">40dp</dimen>
+    <dimen name="medium_spacing">24dp</dimen>
+    <dimen name="large_spacing">36dp</dimen>
+    <dimen name="circle_size">120dp</dimen>
+    <dimen name="circle_text_size">40sp</dimen>
 </resources>

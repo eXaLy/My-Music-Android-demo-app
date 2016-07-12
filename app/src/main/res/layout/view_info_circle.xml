@@ -13,25 +13,32 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
+        <FrameLayout
             android:id="@+id/vci_info_text"
-            android:layout_width="@dimen/circle_size"
-            android:layout_height="@dimen/circle_size"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/accent_circle"
-            android:gravity="center"
-            android:shadowColor="@android:color/white"
-            android:shadowRadius="10.0"
-            android:text="@{infoCircleViewModel.info}"
-            android:textColor="@android:color/black"
-            android:textSize="18sp" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true">
+            <TextView
+                android:layout_width="@dimen/circle_size"
+                android:layout_height="@dimen/circle_size"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/accent_circle"
+                android:gravity="center"
+                android:text="@{infoCircleViewModel.info}"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/circle_text_size" />
+        </FrameLayout>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_below="@id/vci_info_text"
             android:layout_marginTop="@dimen/small_spacing"
+            android:gravity="center"
+            android:textColor="@color/colorPrimary"
+            android:textAllCaps="true"
+            android:textStyle="bold"
             android:text="@{infoCircleViewModel.label}" />
     </RelativeLayout>
 </layout>

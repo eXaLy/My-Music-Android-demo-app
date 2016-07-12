@@ -11,6 +11,7 @@ import ly.aswin.mymusic.R;
 import ly.aswin.mymusic.data.models.Track;
 import ly.aswin.mymusic.databinding.ActivityTrackBinding;
 import ly.aswin.mymusic.ui.viewmodels.InfoCircleViewModel;
+import ly.aswin.mymusic.ui.viewmodels.TrackActivityHandlers;
 
 public class TrackActivity extends AppCompatActivity {
 
@@ -45,6 +46,8 @@ public class TrackActivity extends AppCompatActivity {
                 String.valueOf(track.getDownloadCount()));
         binding.trackCirclePlays.setInfoCircleViewModel(playsCountViewModel);
         binding.trackCircleDownloads.setInfoCircleViewModel(downloadsCountViewModel);
+
+        binding.setHandlers(new TrackActivityHandlers());
     }
 
     private void initToolbar() {
