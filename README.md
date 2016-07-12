@@ -1,4 +1,4 @@
-### My Music
+# My Music
 An Android demonstration app to get my music from SoundCloud.
 
 With some random animations.
@@ -13,3 +13,10 @@ With some random animations.
 * Picasso
 * Card View
 * Recycler View
+
+## How to build
+Go to the root folder and run the command:
+```sh
+$ gradlew assemble
+```
+You can find the builds (release and debug) in the directory `[root]/app/build/outputs/apk`.
