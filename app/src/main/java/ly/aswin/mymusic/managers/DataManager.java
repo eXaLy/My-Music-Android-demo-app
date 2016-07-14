@@ -12,6 +12,8 @@ import rx.schedulers.Schedulers;
 
 /**
  * Created by Aswin on 10-7-2016
+ *
+ * The DataManager is used to get the needed data
  */
 public class DataManager {
 
@@ -21,6 +23,13 @@ public class DataManager {
     public DataManager() {
     }
 
+    /**
+     * Get music from SoundCloud from a user
+     *
+     * @param userId SoundCloud userId
+     * @param subscriber subscriber to receive tracks
+     * @return Subscription
+     */
     public Subscription getMusic(String userId, Subscriber<List<Track>> subscriber) {
         return NetworkHandler.getInstance().getSoundCloudService().getTracks(userId)
                 .observeOn(AndroidSchedulers.mainThread())

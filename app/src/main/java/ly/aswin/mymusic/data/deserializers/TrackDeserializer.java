@@ -15,6 +15,8 @@ import ly.aswin.mymusic.network.WSConstants;
 
 /**
  * Created by Aswin on 10-7-2016
+ *
+ * TrackDeserializer will be used to map the JSON to the defined Track model
  */
 public class TrackDeserializer implements JsonDeserializer<Track> {
 
@@ -40,6 +42,13 @@ public class TrackDeserializer implements JsonDeserializer<Track> {
         return null;
     }
 
+    /**
+     * Updates the URL as value with the API KEY as query, so that the URL can be requested
+     *
+     * @param data json
+     * @param key json key
+     * @return URL
+     */
     private String updateAuthUrl(JsonObject data, String key) {
         JsonElement obj = data.get(key);
         if (obj != null && !obj.isJsonNull()) {
@@ -48,6 +57,12 @@ public class TrackDeserializer implements JsonDeserializer<Track> {
         return null;
     }
 
+    /**
+     * Updates the image url to the biggest format
+     *
+     * @param data json
+     * @return image url
+     */
     private String getBigArtwork(JsonObject data) {
         JsonElement obj = data.get(KEY_ARTWORK_URL);
         if (obj != null && !obj.isJsonNull()) {
@@ -56,6 +71,12 @@ public class TrackDeserializer implements JsonDeserializer<Track> {
         return null;
     }
 
+    /**
+     * Gets the username from the owner object
+     *
+     * @param data json
+     * @return owner username
+     */
     private String findOwner(JsonObject data) {
         JsonObject obj = data.get(KEY_USER).getAsJsonObject();
         if (obj != null && !obj.isJsonNull()) {

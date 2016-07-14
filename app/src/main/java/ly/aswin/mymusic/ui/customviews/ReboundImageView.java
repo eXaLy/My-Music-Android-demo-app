@@ -16,6 +16,8 @@ import com.facebook.rebound.SpringSystem;
 
 /**
  * Created by Aswin on 10-7-2016
+ *
+ * ReboundImageView has a bouncy effect when you touch the image
  */
 public class ReboundImageView extends ImageView {
 

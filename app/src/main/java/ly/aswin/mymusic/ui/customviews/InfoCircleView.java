@@ -12,6 +12,8 @@ import ly.aswin.mymusic.ui.viewmodels.InfoCircleViewModel;
 
 /**
  * Created by Aswin on 12-7-16
+ *
+ * InfoCircleView contains info in a circle and a label beneath the circle
  */
 public class InfoCircleView extends RelativeLayout {
 

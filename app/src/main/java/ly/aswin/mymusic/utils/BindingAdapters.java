@@ -14,6 +14,10 @@ import ly.aswin.mymusic.R;
  * Created by Aswin on 10-7-2016
  */
 public class BindingAdapters {
+
+    /**
+     * Bind image (by XML files) without any placeholder or fallback image
+     */
     @BindingAdapter("bind:imageUrlSimple")
     public static void loadSimpleImage(ImageView imageView, String url) {
         if (!TextUtils.isEmpty(url)) {
@@ -21,6 +25,9 @@ public class BindingAdapters {
         }
     }
 
+    /**
+     * Bind image (by XML files) with placeholder and fallback image
+     */
     @BindingAdapter("bind:imageUrl")
     public static void loadImage(ImageView imageView, String url) {
         Picasso.with(imageView.getContext()).load(url).placeholder(R.drawable.placeholder)

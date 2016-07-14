@@ -11,6 +11,8 @@ import ly.aswin.mymusic.databinding.ViewTrackCardBinding;
 
 /**
  * Created by Aswin on 10-7-2016
+ *
+ * The TrackCardView is a card view that contains a title and a ReboundImageView
  */
 public class TrackCardView extends CardView {
 

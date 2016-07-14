@@ -2,6 +2,8 @@ package ly.aswin.mymusic.network;
 
 /**
  * Created by Aswin on 10-7-2016
+ *
+ * All constants that will be used for web services
  */
 public class WSConstants {
     public static final String BASE_URL = "https://api.soundcloud.com/";

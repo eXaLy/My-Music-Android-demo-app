@@ -14,6 +14,13 @@ import ly.aswin.mymusic.ui.viewmodels.InfoCircleViewModel;
 import ly.aswin.mymusic.ui.viewmodels.TrackActivityHandlers;
 import ly.aswin.mymusic.utils.MusicPlayer;
 
+/**
+ * Activity that renders the track information:
+ * - Amount of downloads
+ * - Amount of plays
+ * - Play button to play the track by a music player
+ * - Artwork image as parallax toolbar
+ */
 public class TrackActivity extends AppCompatActivity {
 
     public static final String KEY_TRACK = "KEY_TRACK";

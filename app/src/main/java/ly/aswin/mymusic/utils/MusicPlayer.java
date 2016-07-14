@@ -8,6 +8,8 @@ import java.io.IOException;
 
 /**
  * Created by Aswin on 12-7-2016
+ *
+ * Simple music player to play a track by a URL
  */
 public class MusicPlayer {
 

@@ -25,6 +25,9 @@ import rx.Subscriber;
 
 /**
  * Created by Aswin on 13-7-2016
+ *
+ * Fragment to render a list of tracks from a user
+ * - UserId will be passed to this fragment
  */
 public class TrackListFragment extends Fragment {
 

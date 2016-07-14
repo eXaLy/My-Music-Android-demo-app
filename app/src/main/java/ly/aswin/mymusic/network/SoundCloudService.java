@@ -9,6 +9,8 @@ import rx.Observable;
 
 /**
  * Created by Aswin on 10-7-2016
+ *
+ * Interface to get data from SoundCloud that will be used by Retrofit2
  */
 public interface SoundCloudService {
     @GET(WSConstants.USERS_ENDPOINT + "{userId}/" + WSConstants.TRACKS_ENDPOINT)

@@ -21,6 +21,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * Created by Aswin on 10-7-2016
+ *
+ * The NetworkHandler is a singleton and will setup the needed stuff to make network requests.
+ * Settings as logging, interceptors
  */
 public class NetworkHandler {
     /*************************************
