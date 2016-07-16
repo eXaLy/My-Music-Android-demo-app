@@ -4,6 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import ly.aswin.mymusic.data.models.User;
@@ -14,11 +15,11 @@ import ly.aswin.mymusic.ui.fragments.TrackListFragment;
  */
 public class TrackListsPagerAdapter extends FragmentPagerAdapter {
 
-    private List<User> users;
+    private List<User> users = new ArrayList<>();
 
     public TrackListsPagerAdapter(FragmentManager fm, List<User> users) {
         super(fm);
-        this.users = users;
+        addUsers(users);
     }
 
     @Override
@@ -40,5 +41,12 @@ public class TrackListsPagerAdapter extends FragmentPagerAdapter {
             return users.get(position).getUsername();
         }
         return null;
+    }
+
+    public void addUsers(List<User> users) {
+        if (users != null && !users.isEmpty()) {
+            this.users.addAll(users);
+            notifyDataSetChanged();
+        }
     }
 }
