@@ -20,3 +20,8 @@ Go to the root folder and run the command:
 $ gradlew assemble
 ```
 You can find the builds (release and debug) in the directory `[root]/app/build/outputs/apk`.
+
+## Improvements to-do list
+
+* Use Dagger2 for dependency injection (for DataManager for example)
+* Espresso UI tests
